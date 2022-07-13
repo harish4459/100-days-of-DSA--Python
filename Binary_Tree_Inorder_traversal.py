@@ -28,6 +28,7 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 Solution -
 
 
+Recursive approach-
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
@@ -39,5 +40,20 @@ class Solution:
             self.inorder(node.left)
             self.ans.append(node.val)
             self.inorder(node.right)
-  
-  
+          
+          
+Iterative approach-
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        stack =[]
+        cur = root
+      
+        while cur or stack:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            cur = stack.pop()
+            res.append(cur.val)
+            cur = cur.right
+        return res
