@@ -69,7 +69,7 @@ class Solution:
             hashset.add(head)
             head = head.next
             
-       return None
+       return False
     
    
       
