@@ -48,7 +48,7 @@ class Solution:
                 if (arr[mid] < target):
                     start = mid +1
                 elif (arr[mid] > target):
-                    end = end - 1
+                    end = mid - 1
                 else:
                     ans = mid
                     break
